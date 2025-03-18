@@ -1,7 +1,7 @@
 {
-  "name": "react-form-validator-core",
-  "version": "2.0.2",
-  "description": "Core validator component for react forms.",
+  "name": "react-form-validator-core-regextend",
+  "version": "2.0.4",
+  "description": "Core validator component for react forms. With RegExp flags 'in one string' compatibility. Fork of https://github.com/NewOldMax/react-form-validator-core",
   "main": "./lib/index.js",
   "scripts": {
     "build": "babel ./src -d ./lib --presets=es2015,react,stage-2",
@@ -10,19 +10,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NewOldMax/react-form-validator-core.git"
+    "url": "git+https://github.com/Axedem/react-form-validator-core-regextend.git"
   },
   "keywords": [
     "react",
     "form",
     "validation"
   ],
-  "author": "NewOldMax",
+  "author": "Axedem",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/NewOldMax/react-form-validator-core/issues"
+    "url": "https://github.com/Axedem/react-form-validator-core-regextend/issues"
   },
-  "homepage": "https://github.com/NewOldMax/react-form-validator-core#readme",
+  "homepage": "https://github.com/Axedem/react-form-validator-core-regextend#readme",
   "peerDependencies": {
     "react": "^16.3.0 || ^17.0.0 || ^18.0.0 || ^19.0.0",
     "react-dom": "^16.3.0 || ^17.0.0 || ^18.0.0 || ^19.0.0"

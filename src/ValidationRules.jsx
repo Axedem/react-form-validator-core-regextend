@@ -18,7 +18,25 @@ const isEmptyTrimed = function (value) {
 
 const validations = {
     matchRegexp: (value, regexp) => {
-        const validationRegexp = (regexp instanceof RegExp ? regexp : (new RegExp(regexp)));
+        let validationRegexp;
+
+        if (regexp instanceof RegExp) {
+            validationRegexp = regexp;
+        } else if (typeof regexp === 'string') {
+            const regexParts = regexp.match(/^\/(.*)\/([a-z]*)$/i);
+            if (regexParts) {
+                // String "/pattern/flags"
+                const pattern = regexParts[1];
+                const flags = regexParts[2];
+                validationRegexp = new RegExp(pattern, flags);
+            } else {
+                // String "pattern"
+                validationRegexp = new RegExp(regexp);
+            }
+        } else {
+            throw new Error('Invalid regexp type');
+        }
+
         return (isEmpty(value) || validationRegexp.test(value));
     },
 
